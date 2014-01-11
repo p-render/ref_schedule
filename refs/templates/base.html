@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        {% block extrahead %}{% endblock %}
+</head>
+<body>
+	<h1>Welcome to a Simple User Sign Up App</h1>
+
+	<div>
+        <div>
+            {% if user.is_authenticated %}
+            <p><a href="/logout/">Logout</a>    |    <a href="/register/">Register</a>    |    <a href="/admin/">Admin</a></p>
+            {% else %}
+            <p><a href="/login/">Login</a>    |    <a href="/register/">Register</a>    |    <a href="/admin/">Admin</a></p>
+            {% endif %}
+        </div>
+	        {% block content %}
+	        {% endblock %}
+	</div>
+</body>
+</html>
